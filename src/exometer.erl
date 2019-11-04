@@ -753,7 +753,8 @@ get_values(Path) ->
                       [{Name, V}|Acc];
                   {error,not_found} ->
                       Acc
-              end
+              end;
+          ({_N, _T, disabled}, Acc) -> Acc
       end, [], Entries).
 
 -spec select(ets:match_spec()) -> list().
